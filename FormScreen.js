@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+// This file is a duplicate. Please use screens/FormScreen.js only.
+
+import React from 'react';
 import { View, Text, TextInput, Button, StyleSheet, ScrollView, Alert } from 'react-native';
 
-const FormScreen = () => {
-  const [studentId, setStudentId] = useState('');
-  const [fullName, setFullName] = useState('');
-  const [course, setCourse] = useState('');
-  const [yearLevel, setYearLevel] = useState('');
+let studentId = '';
+let fullName = '';
+let course = '';
+let yearLevel = '';
 
+const FormScreen = () => {
   const handleSubmit = () => {
-    // You can replace this with your API call
     Alert.alert('Submitted', `ID: ${studentId}\nName: ${fullName}\nCourse: ${course}\nYear: ${yearLevel}`);
   };
 
@@ -19,26 +20,26 @@ const FormScreen = () => {
         <TextInput
           style={styles.input}
           placeholder="Student ID"
-          value={studentId}
-          onChangeText={setStudentId}
+          defaultValue={studentId}
+          onChangeText={text => { studentId = text; }}
         />
         <TextInput
           style={styles.input}
           placeholder="Full Name"
-          value={fullName}
-          onChangeText={setFullName}
+          defaultValue={fullName}
+          onChangeText={text => { fullName = text; }}
         />
         <TextInput
           style={styles.input}
           placeholder="Course"
-          value={course}
-          onChangeText={setCourse}
+          defaultValue={course}
+          onChangeText={text => { course = text; }}
         />
         <TextInput
           style={styles.input}
           placeholder="Year Level"
-          value={yearLevel}
-          onChangeText={setYearLevel}
+          defaultValue={yearLevel}
+          onChangeText={text => { yearLevel = text; }}
           keyboardType="numeric"
         />
         <Button title="Submit" onPress={handleSubmit} />

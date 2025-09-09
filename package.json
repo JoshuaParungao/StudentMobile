@@ -1,4 +1,4 @@
-{
+git push origin master{
   "name": "studentmobile",
   "version": "1.0.0",
   "main": "index.js",
